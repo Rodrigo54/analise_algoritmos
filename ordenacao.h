@@ -23,7 +23,7 @@
 #include <time.h>
 
 //int tam_v = 15;
-int *a, *aux;
+//int *a, *aux;
 void cria_vetor(int *a, int tam);
 void mostra_vetor(int *a, int tam);
 

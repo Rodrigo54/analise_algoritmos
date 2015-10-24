@@ -30,7 +30,7 @@ void cria_vetor(int *a, int tam){
   int i;
   srand(time(NULL));
   for (i=0;i<tam; i++){
-    a[i]=rand()%100;
+    a[i] = rand()%100;
   }
 }
 

@@ -13,24 +13,24 @@
  */
 
 #include "ordenacao.h"
-//#ifndef tam_v
-//#define tam_v 15
-//#endif
+
 
 int main(){
   system("title Ordenação de Vetores");
   setlocale(LC_ALL, "Portuguese");//Define o idioma para Portugues
 
+  int *a, *aux;
   int opcao,busca,result;
   int tam_v = 15;
-  a = aux = (int *) malloc(tam_v * sizeof(int));
-  cria_vetor(a,tam_v);
-  aux = a;
+  a = (int *) malloc(tam_v * sizeof(int));
+  aux = (int *) malloc(tam_v * sizeof(int));
+  //aux = (*a);
 
-	do{
+  do{
+    cria_vetor(a,tam_v);
     printf("\n\tOrdenação de Vetores!");
     printf("\n\tVetor Original:");
-    mostra_vetor(aux,tam_v);
+    mostra_vetor(a,tam_v);
 
     printf("\n\tSelecione um método de ordenação:");
     printf("\n\t1. Insert Sort");
@@ -84,7 +84,7 @@ int main(){
         result = busca_sequ( a, tam_v, busca);
         printf("\n\tVetor ordenado:");
         mostra_vetor(a,tam_v);
-        printf("\n\tValor %d encontrado na posição %d\n\t",busca,result);
+        printf("\n\tValor %d encontrado na posição %d\n\t",busca,result+1);
         getch();
         system("cls");
         break;
@@ -95,7 +95,7 @@ int main(){
         result = busca_bin( a, tam_v, busca);
         printf("\n\tVetor ordenado:");
         mostra_vetor(a,tam_v);
-        printf("\n\tValor %d encontrado na posição %d\n\t",busca,result);
+        printf("\n\tValor %d encontrado na posição %d\n\t",busca,result+1);
         getch();
         system("cls");
         break;
