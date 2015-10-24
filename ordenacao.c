@@ -17,13 +17,13 @@
 
 void mostra_vetor(int *a, int tam){
   int i;
-  printf("\n\t{");
+  wprintf(L"\n\t{");
   for(i = 0; i < tam; i++){
-    printf("%d",a[i]);
+    wprintf(L"%d",a[i]);
     if(i < tam - 1)
-      printf(", ");
+      wprintf(L", ");
   }
-  printf("}\n");
+  wprintf(L"}\n");
 }
 
 void cria_vetor(int *a, int tam){

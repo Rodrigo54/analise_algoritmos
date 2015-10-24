@@ -18,12 +18,9 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <locale.h>
 #include <conio.h>
 #include <time.h>
 
-//int tam_v = 15;
-//int *a, *aux;
 void cria_vetor(int *a, int tam);
 void mostra_vetor(int *a, int tam);
 
