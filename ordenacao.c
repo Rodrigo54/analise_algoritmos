@@ -15,6 +15,25 @@
 
 #include "ordenacao.h"
 
+void mostra_vetor(int *a, int tam){
+  int i;
+  printf("\n\t{");
+  for(i = 0; i < tam; i++){
+    printf("%d",a[i]);
+    if(i < tam - 1)
+      printf(", ");
+  }
+  printf("}\n");
+}
+
+void cria_vetor(int *a, int tam){
+  int i;
+  srand(time(NULL));
+  for (i=0;i<tam; i++){
+    a[i]=rand()%100;
+  }
+}
+
 // Função de Ordenação por Inserção
 void insertion_sort(int *a, int tam ){
  int i, j, tmp;
@@ -71,7 +90,7 @@ void bubble_sort(int *a, int tam){
 }
 
 //Função Merge sort
-void intercala(int v[],int ini, int meio,int fim,int aux[]){
+void intercala(int *v,int ini, int meio,int fim,int aux[]){
     int i = ini, j = meio + 1, k = 0;
 
     while(i <= meio && j <= fim){
@@ -92,7 +111,7 @@ void intercala(int v[],int ini, int meio,int fim,int aux[]){
         v[i]=aux[k];
     }
 }
-void mergeSort (int vet[], int esq, int dir,int aux[]){
+void mergeSort (int *vet, int esq, int dir,int aux[]){
     int meio;
 
     if(esq < dir){
@@ -106,7 +125,7 @@ void mergeSort (int vet[], int esq, int dir,int aux[]){
 /** @name Busca Binária
  *  @note Leia mais em biblioteca_sistema_veiculo.h
 **/
-int busca_bin(int vet[], int tam, int valor){
+int busca_bin(int *vet, int tam, int valor){
     int ini, fim, meio;
 
     ini = 0;
@@ -132,7 +151,7 @@ int busca_bin(int vet[], int tam, int valor){
 /** @name Busca Sequencial
  *  @note Leia mais em biblioteca_sistema_veiculo.h
 **/
-int busca_sequ(int vet[], int tam, int elem){
+int busca_sequ(int *vet, int tam, int elem){
     int i;
     for (i=0; i<tam; i++) {
         if (elem == vet[i])
@@ -146,7 +165,7 @@ int busca_sequ(int vet[], int tam, int elem){
 /** @name Ordenação Quicksort
  *  @note Leia mais em biblioteca_sistema_veiculo.h
 **/
-int particao(int vet[], int pini, int pfim){
+int particao(int *vet, int pini, int pfim){
    int i,j;
    int pivo, temp;
    i = pini;
@@ -170,7 +189,7 @@ int particao(int vet[], int pini, int pfim){
    return j;
 }
 
-void quickSort(int vet[], int pini, int pfim ){
+void quickSort(int *vet, int pini, int pfim ){
    int pivot;
 
    if (pini < pfim){

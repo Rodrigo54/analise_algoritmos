@@ -16,17 +16,28 @@
 #ifndef ORDENACAO_H_INCLUDED
 #define ORDENACAO_H_INCLUDED
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <conio.h>
+#include <time.h>
+
+//int tam_v = 15;
+int *a, *aux;
+void cria_vetor(int *a, int tam);
+void mostra_vetor(int *a, int tam);
+
 void insertion_sort(int *a, int tam);
 void select_sort(int *a, int tam);
 void bubble_sort(int *a, int tam);
 
-void intercala(int v[],int ini, int meio,int fim,int aux[]);
-void mergeSort (int vet[], int esq, int dir,int aux[]);
+void intercala(int *v,int ini, int meio,int fim,int aux[]);
+void mergeSort (int *vet, int esq, int dir,int aux[]);
 
-int busca_bin(int vet[], int tam, int valor);
-int busca_sequ(int vet[], int tam, int elem);
+int busca_bin(int *vet, int tam, int valor);
+int busca_sequ(int *vet, int tam, int elem);
 
-void quickSort(int vet[], int pini, int pfim );
-int particao(int vet[], int pini, int pfim);
+void quickSort(int *vet, int pini, int pfim );
+int particao(int *vet, int pini, int pfim);
 
 #endif // ORDENACAO_H_INCLUDED
