@@ -16,11 +16,6 @@
 #ifndef ORDENACAO_H_INCLUDED
 #define ORDENACAO_H_INCLUDED
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <conio.h>
-#include <time.h>
-
 void cria_vetor(int *a, int tam);
 void mostra_vetor(int *a, int tam);
 
@@ -35,6 +30,10 @@ int busca_bin(int *vet, int tam, int valor);
 int busca_sequ(int *vet, int tam, int elem);
 
 void quickSort(int *vet, int pini, int pfim );
-int particao(int *vet, int pini, int pfim);
+int particao(int *v, int p, int r);
+
+void StartCounter(void);
+double GetCounter(void);
+void printempo(double t);
 
 #endif // ORDENACAO_H_INCLUDED

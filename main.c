@@ -11,12 +11,16 @@
  *
  * @file main.c
  */
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
 
-#include "ordenacao.h"
 #include <wchar.h>  //Biblioteca para conjunto UTF8 de caracteres
 #include <io.h>     //Biblioteca para conjunto UTF8 de caracteres
 #include <fcntl.h>  //Biblioteca para conjunto UTF8 de caracteres
 #define UTF_8  0x40000
+#include "ordenacao.h"
+
 
 int main(){
   _setmode(_fileno(stdout), UTF_8); //Define no console o conjunto UTF8 de caracteres
@@ -36,9 +40,12 @@ int main(){
   int *a, *aux;
   int opcao,busca,result;
   int tam_v = 15;
+
+  //tempo em milissegundos
+  double tempo = 0.0000000;
+
   a = (int *) malloc(tam_v * sizeof(int));
   aux = (int *) malloc(tam_v * sizeof(int));
-  //aux = (*a);
 
   do{
     cria_vetor(a,tam_v);
@@ -47,63 +54,74 @@ int main(){
     mostra_vetor(a,tam_v);
 
     wprintf(L"\n\t┌────── Selecione uma das opções ──────┐");
-    wprintf(L"\n\t│ 1. Insert Sort                       │");
-    wprintf(L"\n\t│ 2. Select Sort                       │");
-    wprintf(L"\n\t│ 3. Bubble Sort                       │");
-    wprintf(L"\n\t│ 4. Merge Sort                        │");
-    wprintf(L"\n\t│ 5. Quick Sort                        │");
-    wprintf(L"\n\t│ 6. Busca Sequencial                  │");
-    wprintf(L"\n\t│ 7. Busca Binaria                     │");
+    wprintf(L"\n\t│ 1. Definir o Tamanho do vetor        │");
+    wprintf(L"\n\t│ 2. Insert Sort                       │");
+    wprintf(L"\n\t│ 3. Select Sort                       │");
+    wprintf(L"\n\t│ 4. Bubble Sort                       │");
+    wprintf(L"\n\t│ 5. Merge Sort                        │");
+    wprintf(L"\n\t│ 6. Quick Sort                        │");
+    wprintf(L"\n\t│ 7. Busca Sequencial                  │");
+    wprintf(L"\n\t│ 8. Busca Binaria                     │");
     wprintf(L"\n\t│ 0. Sair                              │");
     wprintf(L"\n\t└──────────────────────────────────────┘\n\t");
     scanf("%d",&opcao);
     switch(opcao){
       case 1:
-        insertion_sort(a,tam_v);
-        wprintf(L"\n\tVetor Ordenado:");
-        mostra_vetor(a,tam_v);
-        getch();
+        wprintf(L"\n\tDigite o Tamanho do vetor:  ");
+        scanf("%d",&tam_v);
+        free(a);
+        free(aux);
+        a = (int *) malloc(tam_v * sizeof(int));
+        aux = (int *) malloc(tam_v * sizeof(int));
         system("cls");
         break;
       case 2:
-        select_sort(a,tam_v);
+        StartCounter();
+        insertion_sort(a,tam_v);
+        tempo = GetCounter();
         wprintf(L"\n\tVetor Ordenado:");
         mostra_vetor(a,tam_v);
+        printempo(tempo);
         getch();
         system("cls");
         break;
       case 3:
-        bubble_sort(a,tam_v);
+        StartCounter();
+        select_sort(a,tam_v);
+        tempo = GetCounter();
         wprintf(L"\n\tVetor Ordenado:");
         mostra_vetor(a,tam_v);
+        printempo(tempo);
         getch();
         system("cls");
         break;
       case 4:
-        mergeSort( a, 0, tam_v ,aux);
+        StartCounter();
+        bubble_sort(a,tam_v);
+        tempo = GetCounter();
         wprintf(L"\n\tVetor Ordenado:");
         mostra_vetor(a,tam_v);
+        printempo(tempo);
         getch();
         system("cls");
         break;
       case 5:
-        quickSort( a, 0, tam_v);
+        StartCounter();
+        mergeSort( a, 0, tam_v-1, aux);
+        tempo = GetCounter();
         wprintf(L"\n\tVetor Ordenado:");
         mostra_vetor(a,tam_v);
+        printempo(tempo);
         getch();
         system("cls");
         break;
       case 6:
-        wprintf(L"\n\tDigite um valor:  ");
-        scanf("%d",&busca);
-        insertion_sort(a,tam_v);
-        result = busca_sequ( a, tam_v, busca);
-        wprintf(L"\tVetor ordenado:");
+        StartCounter();
+        quickSort(a, 0, tam_v-1);
+        tempo = GetCounter();
+        wprintf(L"\n\tVetor Ordenado:");
         mostra_vetor(a,tam_v);
-        if(result == -1)
-          wprintf(L"\n\tValor não encontrado!\n");
-        else
-          wprintf(L"\n\tValor %d encontrado na posição %d\n\t",busca,result+1);
+        printempo(tempo);
         getch();
         system("cls");
         break;
@@ -111,13 +129,33 @@ int main(){
         wprintf(L"\n\tDigite um valor:  ");
         scanf("%d",&busca);
         insertion_sort(a,tam_v);
-        result = busca_bin( a, tam_v, busca);
+        StartCounter();
+        result = busca_sequ( a, tam_v, busca);
+        tempo = GetCounter();
         wprintf(L"\tVetor ordenado:");
         mostra_vetor(a,tam_v);
+        printempo(tempo);
         if(result == -1)
           wprintf(L"\n\tValor não encontrado!\n");
         else
           wprintf(L"\n\tValor %d encontrado na posição %d\n\t",busca,result+1);
+        getch();
+        system("cls");
+        break;
+      case 8:
+        wprintf(L"\n\tDigite um valor:  ");
+        scanf("%d",&busca);
+        insertion_sort(a,tam_v);
+        StartCounter();
+        result = busca_bin( a, tam_v, busca);
+        tempo = GetCounter();
+        wprintf(L"\tVetor ordenado:");
+        mostra_vetor(a,tam_v);
+        printempo(tempo);
+        if(result == -1)
+          wprintf(L"\tValor não encontrado!\n");
+        else
+          wprintf(L"\tValor %d encontrado na posição %d\n\t",busca,result+1);
         getch();
         system("cls");
         break;
