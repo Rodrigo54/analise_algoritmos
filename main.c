@@ -1,16 +1,17 @@
 /**
- * @package Ordenação de Vetores
- * programa que atende os requisitos da
- * 5 questao da primeira parcial de estrutura de dados 2
+ * @package Análise de Algoritmos
+ * programa que atende os requisitos do
+ * trabalho de Projeto e Análise de Algoritmos
  *
  * @author Rodrigo Alves Mesquita <rodrigo54mix@gmail.com>
  * @link http://www.github.com/rodrigo54
- * @version 0.1
- * @date 5 Abr 2015
+ * @version 1.5
+ * @date 24 Out 2015
  * @copyright 2015 by Rodrigo Alves Mesquita
  *
  * @file main.c
- */
+**/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
@@ -19,12 +20,12 @@
 #include <io.h>     //Biblioteca para conjunto UTF8 de caracteres
 #include <fcntl.h>  //Biblioteca para conjunto UTF8 de caracteres
 #define UTF_8  0x40000
-#include "ordenacao.h"
+#include "analise_algoritmos.h"
 
 
 int main(){
   _setmode(_fileno(stdout), UTF_8); //Define no console o conjunto UTF8 de caracteres
-  system("title ORDENACAO DE VETORES");
+  system("title ANALISE DE ALGORITMOS");
   system("color 0e");
   /*CORES 1=FUNDO 2=TEXTO
     0 = Preto        8 = Cinza
@@ -49,11 +50,12 @@ int main(){
 
   do{
     cria_vetor(a,tam_v);
-    wprintf(L"\n\t├─────── ORDENAÇÃO DE VETORES ──────────┤");
+    wprintf(L"\n\t├─────── ANÁLISE DE ALGORITMOS ────────┤");
     wprintf(L"\n\n\tVetor Original:");
     mostra_vetor(a,tam_v);
 
     wprintf(L"\n\t┌────── Selecione uma das opções ──────┐");
+    wprintf(L"\n\t│                                      │");
     wprintf(L"\n\t│ 1. Definir o Tamanho do vetor        │");
     wprintf(L"\n\t│ 2. Insert Sort                       │");
     wprintf(L"\n\t│ 3. Select Sort                       │");
@@ -162,11 +164,12 @@ int main(){
       case 0:
         system("cls");
         wprintf(L"\n\n\t\t");
-        wprintf(L"\n\t┌────────── ORDENAÇÃO DE VETORES ─────────┐");
+        wprintf(L"\n\t┌───────── ANÁLISE DE ALGORITMOS ─────────┐");
         wprintf(L"\n\t│                                         │");
-        wprintf(L"\n\t│  Programa feito para obtenção de nota   │");
-        wprintf(L"\n\t│  parcial de estrutura de dados          │");
-        wprintf(L"\n\t│  Obrigado por usar nosso app!           │");
+        wprintf(L"\n\t│  Atividade feita para obtenção de       │");
+        wprintf(L"\n\t│  nota parcial na materia de Projeto     │");
+        wprintf(L"\n\t│  e Análise de Algoritmos.               │");
+        wprintf(L"\n\t│  Compartilhe conhecimento!              │");
         wprintf(L"\n\t│                                         │");
         wprintf(L"\n\t│  Criado por Rodrigo Alves Mesquita      │");
         wprintf(L"\n\t│                                         │");

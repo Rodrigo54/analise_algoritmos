@@ -1,17 +1,17 @@
 /**
- * @package Ordenação de Vetores
- * programa que atende os requisitos da
- * 5 questao da primeira parcial de estrutura de dados 2
+ * @package Análise de Algoritmos
+ * programa que atende os requisitos do
+ * trabalho de Projeto e Análise de Algoritmos
  *
  * @author Rodrigo Alves Mesquita <rodrigo54mix@gmail.com>
  * @link http://www.github.com/rodrigo54
- * @version 0.1
- * @date 5 Abr 2015
+ * @version 1.5
+ * @date 24 Out 2015
  * @copyright 2015 by Rodrigo Alves Mesquita
  *
- * @file ordenacao.h
- * Este arquivo é o cabeçalho do ordenacao.c
- */
+ * @file analise_algoritmos.h
+ * Este arquivo é o cabeçalho do analise_algoritmos.c
+**/
 
 #ifndef ORDENACAO_H_INCLUDED
 #define ORDENACAO_H_INCLUDED

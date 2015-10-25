@@ -2,7 +2,7 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="analize_algoritmos" />
+		<Option title="analise_algoritmos" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
@@ -34,10 +34,10 @@
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="ordenacao.c">
+		<Unit filename="analise_algoritmos.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="ordenacao.h" />
+		<Unit filename="analise_algoritmos.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
