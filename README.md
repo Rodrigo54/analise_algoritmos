@@ -1,6 +1,6 @@
 Análise de Algoritmos
 ===========
-[![Build Status](https://img.shields.io/badge/build-passed-brightgreen.svg)](http://github.com/Rodrigo54/)
+[![Build Status](https://dev.azure.com/rodrigo254mix/analise_algoritmos/_apis/build/status/Rodrigo54.analise_algoritmos?branchName=master)](https://dev.azure.com/rodrigo254mix/analise_algoritmos/_build/latest?definitionId=4&branchName=master)
 [![Version 2.5](https://img.shields.io/badge/version-1.5-blue.svg)](http://github.com/Rodrigo54/)
 [![requirement](https://img.shields.io/badge/requirements-Code%3A%3ABlocks-orange.svg)](http://www.codeblocks.org/downloads)
 
